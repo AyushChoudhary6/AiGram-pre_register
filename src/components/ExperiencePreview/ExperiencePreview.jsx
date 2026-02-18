@@ -13,7 +13,7 @@ const previews = [
   {
     id: 2,
     title: 'Market Place',
-    description: 'Upload proof of work and move from attempt to verified progression with XP rewards.',
+    description: 'The ultimate one work environment for deploying and using thirdparty ai solutions.Users can use any ai tool without multiple subscription and developers get royalties.',
     image: '/ai_chat_interface.png',
   },
   {
