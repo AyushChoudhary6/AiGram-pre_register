@@ -1,0 +1,58 @@
+.why-different {
+  padding: 0 0 3.2rem;
+}
+
+.why-different__header {
+  margin-bottom: 1rem;
+}
+
+.why-different__title {
+  font-size: clamp(1.75rem, 4.2vw, 3rem);
+  max-width: 48rem;
+}
+
+.why-different__list {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.why-different__item {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  gap: 0.8rem;
+  padding: 0.78rem 0.8rem;
+  border-radius: 12px;
+  border: 1px solid rgba(133, 214, 173, 0.2);
+  background: rgba(12, 18, 15, 0.42);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.why-different__item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(147, 244, 196, 0.44);
+  box-shadow: 0 0 16px rgba(102, 230, 170, 0.18);
+}
+
+.why-different__number {
+  font-family: var(--font-family-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.09em;
+  color: rgba(146, 233, 188, 0.78);
+  margin-top: 0.25rem;
+}
+
+.why-different__point {
+  font-size: 1.02rem;
+  margin-bottom: 0.34rem;
+}
+
+.why-different__description {
+  color: rgba(201, 226, 213, 0.84);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .why-different__item {
+    grid-template-columns: 1fr;
+  }
+}

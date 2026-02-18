@@ -1,0 +1,74 @@
+:root {
+  --color-primary-neon: #74fbb8;
+  --color-primary-emerald: #43c98a;
+  --color-primary-deep: #1f8f5d;
+
+  --color-bg-primary: #070a09;
+  --color-bg-secondary: #0d1310;
+  --color-bg-tertiary: #141d18;
+  --color-text-primary: #edf8f2;
+  --color-text-secondary: rgba(226, 241, 233, 0.86);
+  --color-text-muted: rgba(176, 209, 190, 0.65);
+
+  --gradient-bg: linear-gradient(135deg, #000000 0%, #0d1a15 50%, #1a3a28 100%);
+  --gradient-card: linear-gradient(160deg, rgba(13, 21, 17, 0.78) 0%, rgba(14, 25, 20, 0.45) 100%);
+  --gradient-accent: linear-gradient(135deg, #74fbb8 0%, #43c98a 100%);
+  --gradient-text-neon: linear-gradient(135deg, #7fffc0 0%, #53d998 100%);
+
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 18px;
+  --border-radius-xl: 24px;
+
+  --shadow-glow-sm: 0 0 20px rgba(106, 240, 176, 0.16);
+  --shadow-glow-md: 0 0 34px rgba(102, 235, 173, 0.24);
+  --shadow-glow-lg: 0 0 54px rgba(106, 246, 182, 0.3);
+  --shadow-elevation: 0 16px 44px rgba(2, 6, 4, 0.45);
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+  
+  --font-family-display: 'Space Grotesk', 'Avenir Next', 'Segoe UI', sans-serif;
+  --font-family-primary: 'Manrope', 'Segoe UI', system-ui, sans-serif;
+  --font-family-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 28px;
+  --font-size-3xl: 36px;
+  --font-size-4xl: 48px;
+  --font-size-5xl: 64px;
+  
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.72;
+
+  --tracking-title: 0.018em;
+  --tracking-module: 0.12em;
+
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 300ms ease-in-out;
+  --transition-slow: 500ms ease-in-out;
+
+  --module-surface: rgba(11, 19, 15, 0.58);
+  --module-border: rgba(123, 215, 170, 0.2);
+  --module-border-strong: rgba(134, 233, 185, 0.45);
+  --module-padding: clamp(1.1rem, 2vw, 1.8rem);
+  --module-glow: 0 0 0 1px rgba(100, 203, 152, 0.1), 0 24px 42px rgba(3, 7, 5, 0.46);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-4xl: 32px;
+    --font-size-5xl: 40px;
+    --spacing-3xl: 40px;
+  }
+}

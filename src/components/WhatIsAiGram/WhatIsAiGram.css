@@ -1,0 +1,51 @@
+.what-is-aigram {
+  padding: 1.4rem 0 3.2rem;
+}
+
+.what-is-aigram__header {
+  margin-bottom: 1.3rem;
+}
+
+.what-is-aigram__title {
+  font-size: clamp(1.8rem, 4.8vw, 3.2rem);
+  margin-bottom: 0.65rem;
+}
+
+.what-is-aigram__subtitle {
+  max-width: 38rem;
+  color: rgba(207, 230, 218, 0.86);
+}
+
+.what-is-aigram__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.feature-card {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.feature-card__index {
+  font-family: var(--font-family-mono);
+  color: rgba(142, 220, 181, 0.74);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+
+.feature-card__title {
+  font-size: 1.1rem;
+  color: rgba(232, 245, 238, 0.96);
+}
+
+.feature-card__description {
+  font-size: 0.95rem;
+  color: rgba(201, 226, 213, 0.85);
+}
+
+@media (max-width: 860px) {
+  .what-is-aigram__grid {
+    grid-template-columns: 1fr;
+  }
+}

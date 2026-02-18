@@ -1,0 +1,106 @@
+.pre-registration-form {
+  padding: 0 0 3rem;
+}
+
+.pre-registration-form__shell {
+  position: relative;
+}
+
+.pre-registration-form__card {
+  max-width: 34rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+.pre-registration-form__card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at var(--portal-x, 50%) var(--portal-y, 50%), rgba(125, 255, 192, 0.16), transparent 55%);
+  pointer-events: none;
+}
+
+.pre-registration-form__header {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+.pre-registration-form__title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 0.55rem;
+}
+
+.pre-registration-form__subtitle {
+  color: rgba(206, 232, 219, 0.88);
+}
+
+.pre-registration-form__content {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.38rem;
+}
+
+.form-label {
+  font-family: var(--font-family-mono);
+  font-size: 0.67rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(170, 217, 193, 0.76);
+}
+
+.form-input {
+  border-radius: 12px;
+  border: 1px solid rgba(128, 204, 167, 0.34);
+  background: rgba(10, 16, 13, 0.75);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-primary);
+  font-size: 0.98rem;
+  padding: 0.72rem 0.85rem;
+  outline: none;
+  transition: border-color 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+}
+
+.form-input:focus {
+  border-color: rgba(136, 255, 198, 0.72);
+  box-shadow: 0 0 0 2px rgba(130, 255, 193, 0.18), 0 0 18px rgba(120, 248, 186, 0.2);
+  background: rgba(12, 20, 16, 0.9);
+}
+
+.form-input::placeholder {
+  color: rgba(162, 195, 178, 0.54);
+}
+
+.form-error {
+  font-size: 0.85rem;
+  color: #ffb8b8;
+  border: 1px solid rgba(255, 150, 150, 0.3);
+  border-radius: 10px;
+  padding: 0.58rem 0.7rem;
+  background: rgba(54, 20, 20, 0.45);
+}
+
+.pre-registration-form__privacy {
+  margin-top: 0.8rem;
+  text-align: center;
+  font-size: 0.76rem;
+  color: rgba(174, 211, 192, 0.76);
+}
+
+.success-state {
+  text-align: center;
+  padding: 1.4rem 0.4rem;
+}
+
+.success-state__title {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin-bottom: 0.5rem;
+}
+
+.success-state__message {
+  color: rgba(205, 229, 217, 0.88);
+}

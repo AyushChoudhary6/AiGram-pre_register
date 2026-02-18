@@ -1,0 +1,256 @@
+.system-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: radial-gradient(circle at 20% 20%, rgba(40, 183, 118, 0.08), transparent 45%),
+    radial-gradient(circle at 80% 80%, rgba(19, 96, 70, 0.08), transparent 50%),
+    linear-gradient(145deg, #060909 0%, #090f0c 45%, #0d1511 100%);
+}
+
+.system-layer__mesh {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle at 25% 35%, rgba(60, 219, 146, 0.14), transparent 45%),
+    radial-gradient(circle at 70% 60%, rgba(39, 168, 117, 0.1), transparent 50%);
+  filter: blur(48px);
+  opacity: 0.75;
+  transform: translate3d(calc(var(--scroll-offset, 0px) * -0.02), calc(var(--scroll-offset, 0px) * -0.015), 0);
+  animation: meshDrift 20s ease-in-out infinite alternate;
+}
+
+.system-layer__mesh--secondary {
+  opacity: 0.5;
+  animation-duration: 26s;
+  animation-direction: alternate-reverse;
+}
+
+.system-layer__lines {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: linear-gradient(140deg, transparent 0%, rgba(136, 255, 201, 0.7) 40%, transparent 55%),
+    repeating-linear-gradient(110deg, rgba(136, 255, 201, 0.25) 0 1px, transparent 1px 46px);
+  transform: translateY(calc(var(--scroll-offset, 0px) * -0.03));
+}
+
+.system-layer__particles {
+  position: absolute;
+  inset: 0;
+}
+
+.system-layer__particle {
+  position: absolute;
+  top: var(--particle-y);
+  left: var(--particle-x);
+  width: var(--particle-size);
+  height: var(--particle-size);
+  border-radius: 999px;
+  background: rgba(127, 255, 192, 0.42);
+  box-shadow: 0 0 10px rgba(95, 232, 165, 0.3);
+  animation: particleFloat var(--particle-duration) linear var(--particle-delay) infinite;
+}
+
+.system-status {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  margin: 0 auto;
+  width: min(1120px, calc(100% - 2rem));
+  border: 1px solid rgba(131, 225, 177, 0.18);
+  border-top: 0;
+  border-radius: 0 0 14px 14px;
+  padding: 0.55rem 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background: rgba(9, 14, 12, 0.62);
+  backdrop-filter: blur(14px);
+  color: rgba(218, 242, 228, 0.67);
+  font-family: var(--font-family-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.system-status__label::after {
+  content: "_";
+  display: inline-block;
+  margin-left: 0.2rem;
+  animation: blinkCursor 1.4s steps(1) infinite;
+}
+
+.journey-rail {
+  position: fixed;
+  top: 50%;
+  right: 1rem;
+  z-index: 4;
+  transform: translateY(-50%);
+  display: grid;
+  gap: 0.8rem;
+  justify-items: end;
+}
+
+.journey-rail__text {
+  font-family: var(--font-family-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(184, 229, 204, 0.75);
+}
+
+.journey-rail__track {
+  display: grid;
+  gap: 0.42rem;
+  padding: 0.5rem 0.45rem;
+  border-radius: 99px;
+  border: 1px solid rgba(123, 215, 170, 0.22);
+  background: rgba(8, 14, 11, 0.45);
+}
+
+.journey-rail__dot {
+  width: 0.46rem;
+  height: 0.46rem;
+  border-radius: 999px;
+  border: 1px solid rgba(138, 221, 180, 0.45);
+  background: rgba(119, 200, 160, 0.12);
+  transition: all 220ms ease;
+}
+
+.journey-rail__dot--active {
+  background: rgba(130, 255, 190, 0.96);
+  box-shadow: 0 0 10px rgba(130, 255, 190, 0.5);
+}
+
+.ai-presence {
+  position: fixed;
+  bottom: 1.1rem;
+  left: 1rem;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ai-presence__orb {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 50%;
+  background: #74fbb8;
+  box-shadow: 0 0 16px rgba(122, 255, 194, 0.6);
+  animation: orbBreath 2.8s ease-in-out infinite;
+}
+
+.ai-presence__tooltip {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 180ms ease, transform 180ms ease;
+  color: rgba(200, 239, 219, 0.9);
+  font-size: 0.72rem;
+  padding: 0.38rem 0.56rem;
+  border: 1px solid rgba(140, 228, 186, 0.2);
+  border-radius: 10px;
+  background: rgba(8, 14, 11, 0.7);
+  backdrop-filter: blur(6px);
+}
+
+.ai-presence:hover .ai-presence__tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ai-presence--pulse .ai-presence__orb {
+  animation: sectionPulse 700ms ease;
+}
+
+@keyframes meshDrift {
+  from {
+    transform: translate3d(-1.5%, -1.5%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(1.5%, 2%, 0) scale(1.05);
+  }
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(-16px, -44px, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes blinkCursor {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.1%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes orbBreath {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.14);
+    opacity: 1;
+  }
+}
+
+@keyframes sectionPulse {
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.45);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 900px) {
+  .journey-rail {
+    right: 0.4rem;
+  }
+
+  .journey-rail__text {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .system-status {
+    gap: 0.5rem;
+    font-size: 0.6rem;
+    width: calc(100% - 1rem);
+  }
+
+  .journey-rail {
+    top: auto;
+    bottom: 4.2rem;
+    transform: none;
+  }
+
+  .journey-rail__track {
+    grid-auto-flow: column;
+    grid-template-rows: 1fr;
+  }
+}
