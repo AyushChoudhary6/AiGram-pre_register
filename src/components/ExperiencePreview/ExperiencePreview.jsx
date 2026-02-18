@@ -12,14 +12,14 @@ const previews = [
   },
   {
     id: 2,
-    title: 'Skill Validation',
+    title: 'Market Place',
     description: 'Upload proof of work and move from attempt to verified progression with XP rewards.',
     image: '/ai_chat_interface.png',
   },
   {
     id: 3,
-    title: 'Level Intelligence',
-    description: 'Your level path updates dynamically as your outputs improve and your learning pattern evolves.',
+    title: 'Scrolling & Filtered AI Content',
+    description: 'We filter out the content from the best creators so that you get only real value and stay away from noise.',
     image: '/level_progression.png',
   },
 ];
