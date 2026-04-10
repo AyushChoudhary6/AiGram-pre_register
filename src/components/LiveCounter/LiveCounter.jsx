@@ -35,7 +35,7 @@ const LiveBadge = () => {
 };
 
 export default function LiveCounter() {
-  const [count, setCount] = useState(38002);
+  const [count, setCount] = useState(5137);
   const [floatingIncrements, setFloatingIncrements] = useState([]);
   const incrementIdRef = useRef(0);
   const intervalRef = useRef(null);
