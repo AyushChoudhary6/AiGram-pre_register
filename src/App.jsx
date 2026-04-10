@@ -4,6 +4,7 @@ import WhatIsAiGram from './components/WhatIsAiGram/WhatIsAiGram';
 import ExperiencePreview from './components/ExperiencePreview/ExperiencePreview';
 import WhyAiGramIsDifferent from './components/WhyAiGramIsDifferent/WhyAiGramIsDifferent';
 import PreRegistrationForm from './components/PreRegistrationForm/PreRegistrationForm';
+import LiveCounter from './components/LiveCounter/LiveCounter';
 import Footer from './components/Footer/Footer';
 import SystemLayer from './components/SystemLayer/SystemLayer';
 import './App.css';
@@ -99,6 +100,7 @@ function App() {
       <ExperiencePreview />
       <WhyAiGramIsDifferent />
       <PreRegistrationForm />
+      <LiveCounter />
       <section className="emotional-anchor">
         <div className="container">
           <p className="emotional-anchor__line">

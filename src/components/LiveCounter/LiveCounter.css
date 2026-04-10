@@ -1,0 +1,158 @@
+.live-counter-container {
+  padding: 3rem 1rem;
+  background-color: #0d1f1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.live-counter-card {
+  position: relative;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(128, 204, 167, 0.24);
+  background-color: #0a130f;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Live Badge */
+.live-badge {
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  margin-bottom: 1rem;
+  padding: 0.375rem 0.75rem;
+  background-color: rgba(77, 255, 195, 0.1);
+  border: 1px solid #4dffc3;
+  border-radius: 20px;
+  gap: 0.5rem;
+}
+
+.live-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #00ff88;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.live-text {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #4dffc3;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Counter */
+.counter-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 120px;
+  margin-bottom: 1rem;
+}
+
+.number {
+  font-size: clamp(3rem, 8vw, 56px);
+  font-weight: 700;
+  color: #4dffc3;
+  letter-spacing: 1px;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  line-height: 1;
+}
+
+.floating-increments-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.floating-increment {
+  position: absolute;
+  animation: floatUp 1.2s ease-out forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-60px);
+    opacity: 0;
+  }
+}
+
+.floating-text {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #4dffc3;
+  font-family: 'Courier New', monospace;
+  white-space: nowrap;
+}
+
+/* Label and Subtitle */
+.label {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #cee8db;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: rgba(170, 217, 193, 0.68);
+  font-style: italic;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .live-counter-container {
+    padding: 1rem;
+  }
+
+  .live-counter-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .number {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .label {
+    font-size: 1rem;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+  }
+}
